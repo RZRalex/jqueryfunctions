@@ -1,0 +1,103 @@
+body *{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.wrapper{
+    background-color: seashell;
+    width: 90%;
+    margin: 1em;
+    padding: 2em;
+    font-family: 'Recursive', sans-serif;
+}
+
+.wrapper div{
+    display: block;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: silver;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.makered{
+    color: tomato;
+}
+
+p{
+    display: inline;
+}
+
+.sur{
+    color: cornflowerblue;
+}
+
+.prise{
+    color: darkred;
+}
+
+button{
+    padding: 1px 6px;
+    display: inline;
+    margin-right: 2em;
+    border-width: 2px;
+    border-radius: 12px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+
+.red{
+    background-color: tomato;
+}
+
+#noread{
+    color: aqua;
+    background-color: aqua;
+}
+
+.box.up{
+    background: green;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.box.onoff{
+    background: goldenrod;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 5px;
+}
+
+#slideup{
+    margin: 0em 2em 0em;
+}
+
+#slideT{
+    margin: 0em 1.5em 0em;
+}
+
+.box.ghost{
+    background: honeydew;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#fader{
+    margin: 5px;
+    display: inline-block;
+}

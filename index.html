@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="funstyles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery Functions</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>jQuery Functions</h1>
+
+        <!-- ADD CLASS -->
+        <div>
+            <h2 class="selected">AddClass</h2>
+            <button class="red">Make Red</button>
+            <p>Click this button to make the title colored red</p>
+        </div>
+        <!-- BEFORE AFTER -->
+        <div>
+            <h2 class="append">Before and After</h2>
+            <button id="b4">Before</button>
+            <button id="aftr">After</button>
+            <button id="app">Append</button>
+            <br>
+            <p id="1">Press the before button to add some text.</p>
+            <br>
+            <p id="2">Press the after button to add even more text!</p>
+            <br>
+            <p>Press append to add something to title</p>
+        </div>
+
+        <!-- TEXT INPUT -->
+        <div>
+            <h2>Text</h2>
+            <button id="textonly">Get Text</button>
+            <p id="noread">Hello I got washed away</p>
+            <p id="canread"></p>
+            <br>
+            <p>Press the button to get only the text printed in the above.</p>
+        </div>
+        <!-- VALUE INPUT -->
+        <div>
+            <h2 id="decide"></h2>
+            <p>You decide the title for this one. Which is it?</p>
+            <select id="choose">
+                <option>Value</option>
+                <option>.Val</option>
+                <option>.Val()</option>
+            </select>
+        </div>
+        <!-- SLIDE UP/DOWN AND TOGGLE -->
+        <div>
+            <h2>Slide Up, Down, and Toggle</h2>
+            <div class="box up"></div>
+            <div class="box onoff"></div>
+            <p>Make these boxes disappear</p>
+            <br>
+            <button id="slideup">Slide Up</button>
+            <button id="slideT">Slide Toggle</button>
+        </div>
+        <!-- FADE IN/OUT-->
+        <div>
+            <h2>Fade In and Out</h2>
+            <div class="box ghost"><h2>0   0</h2></div>
+            <br>
+            <button id="fader">Fade</button>
+            <br>
+            <p>Make this ghost disappear.</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('.red').click(function(){
+                $('h2.selected').addClass('makered')
+            })
+
+            $('#b4').click(function(){
+                $('#1').before("<p class='sur'><i>some text </i></p>")
+            })
+
+            $('#aftr').click(function(){
+                console.log('Even More Text')
+                $('#2').after("<p class='prise'><b> EVEN MORE TEXT </b></p>")
+            })
+
+            $('#app').click(function(){
+                $('.append').append(' also Append')
+            })
+
+            $('#textonly').click(function(){
+                var bouy = $('#noread').text()
+                $('#canread').html(bouy)
+                
+            })
+
+            function displayVals() {
+                var hdr = $('#choose').val()
+                $('#decide').text(hdr + " Input")
+            }
+            $('#choose').change(displayVals);
+            displayVals();
+
+            $('#slideup').click(function(){
+                if($('.up').is(':hidden')){
+                    $('.up').slideDown('slow');
+                } else {
+                    $('.up').slideUp();
+                }
+            })
+
+            $('#slideT').click(function(){
+                $('.onoff').slideToggle('slow');
+            })
+
+            $('#fader').click(function(){
+                if($('.ghost').is(':hidden')){
+                    $('.ghost').fadeIn('slow');
+                } else {
+                    $('.ghost').fadeOut('slow');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
